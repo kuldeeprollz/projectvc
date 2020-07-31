@@ -1,0 +1,447 @@
+// .btn,
+// .navbar .navbar-nav > a.btn{
+//     border-width: $border-thick;
+//     border: none;
+//     position: relative;
+//     overflow: hidden;
+//     margin:4px 1px;
+//     border-radius: $border-radius-lg;
+//     cursor: pointer;
+
+//     @include btn-styles($default, $default-states);
+
+//     &:hover,
+//     &:focus{
+//         @include opacity(1);
+//         outline: 0 !important;
+//     }
+//     &:active,
+//     &.active,
+//     .open > &.dropdown-toggle {
+//          @include box-shadow(none);
+//          outline: 0 !important;
+//     }
+
+//     .badge{
+//       margin: 0;
+//     }
+
+//     &.btn-icon {
+//         // see above for color variations
+//         height: $icon-size-regular;
+//         min-width: $icon-size-regular;
+//         width: $icon-size-regular;
+//         padding: 0;
+//         font-size: $icon-font-size-regular;
+//         overflow: hidden;
+//         position: relative;
+//         line-height: normal;
+
+//         &.btn-simple{
+//             padding: 0;
+//         }
+
+//         &.btn-sm{
+//             height: $icon-size-sm;
+//             min-width: $icon-size-sm;
+//             width: $icon-size-sm;
+
+//             .fa,
+//             .far,
+//             .fas,
+//             .tim-icons{
+//                 font-size: $icon-font-size-sm;
+//             }
+//         }
+
+//         &.btn-lg{
+//             height: $icon-size-lg;
+//             min-width: $icon-size-lg;
+//             width: $icon-size-lg;
+
+//             .fa,
+//             .far,
+//             .fas,
+//             .tim-icons{
+//                 font-size: $icon-font-size-lg;
+//             }
+//         }
+
+//         &:not(.btn-footer) .tim-icons,
+//         &:not(.btn-footer) .fa,
+//         &:not(.btn-footer) .far,
+//         &:not(.btn-footer) .fas{
+//             position: absolute;
+//             font-size: 1em;
+//             top: 50%;
+//             left: 50%;
+//             transform: translate(-12px, -12px);
+//             line-height: 1.5626rem;
+//             width: 24px;
+//         }
+
+//     }
+
+//     &:not(.btn-icon) .tim-icons{
+//         position: relative;
+//         top: 1px;
+//     }
+
+//     span{
+//       position: relative;
+//       display: block;
+//     }
+
+//   &.btn-link.dropdown-toggle {
+//     color: $dark-gray;
+//   }
+
+//   &.dropdown-toggle:after {
+//     margin-left: 30px !important;
+//   }
+// }
+
+// // Apply the mixin to the buttons
+// // .btn-default { @include btn-styles($default-color, $default-states-color); }
+// .btn-primary { @include btn-styles($primary, $primary-states);
+
+//               }
+// .btn-success { @include btn-styles($success, $success-states);
+
+//               }
+// .btn-info    { @include btn-styles($info, $info-states);
+
+//               }
+// .btn-warning { @include btn-styles($warning, $warning-states);
+//                 &:not(:disabled):not(.disabled):active{
+//                   color: $white;
+//                 }
+//               }
+// .btn-danger  { @include btn-styles($danger, $danger-states);
+
+//               }
+// .btn-neutral { @include btn-styles($white, $white); }
+
+// .btn{
+//      &:disabled,
+//      &[disabled],
+//      &.disabled{
+//         @include opacity(.5);
+//         pointer-events: none;
+//     }
+// }
+// .btn-simple{
+//     border: $border;
+//     border-color: $default;
+//     box-shadow: none;
+//     padding: $padding-btn-vertical - 1 $padding-round-horizontal - 1;
+//     background-color: $transparent-bg;
+// }
+
+// .btn-simple,
+// .btn-link{
+//     &.disabled,
+//     &:disabled,
+//     &[disabled],
+//     fieldset[disabled] & {
+//         &,
+//         &:hover,
+//         &:focus,
+//         &.focus,
+//         &:active,
+//         &.active {
+//             background: $transparent-bg;
+//         }
+//     }
+// }
+
+// .btn:not(:disabled):not(.disabled):active, .btn:not(:disabled):not(.disabled).active{
+//   box-shadow: 2px 2px 6px rgba(0,0,0,.4);
+// }
+// .btn-link{
+//     border: $none;
+//     box-shadow: none;
+//     padding: $padding-base-vertical $padding-base-horizontal;
+//     background: $transparent-bg;
+//     color: $gray-300;
+//     font-weight: $font-weight-bold;
+
+//   &:hover {
+//     box-shadow: none !important;
+//     transform: none !important;
+//   }
+// }
+
+// .btn-lg{
+//    @include btn-size($btn-padding-y-lg, $btn-padding-x-lg, $font-size-base, $border-radius-lg);
+// }
+// .btn-sm{
+//     @include btn-size($btn-padding-y-sm, $btn-padding-x-sm, $font-size-base, $border-radius-sm);
+// }
+
+// .btn-wd {
+//     min-width: 140px;
+// }
+// .btn-group.select{
+//     width: 100%;
+// }
+
+// .btn-group {
+//   .btn.active {
+//     box-shadow: 2px 2px 6px rgba(0,0,0,.4);
+//     transform: translateY(-1px);
+//     -webkit-transform: translateY(-1px);
+//   }
+// }
+
+
+// .btn-group.select .btn{
+//     text-align: left;
+// }
+// .btn-group.select .caret{
+//     position: absolute;
+//     top: 50%;
+//     margin-top: -1px;
+//     right: 8px;
+// }
+
+// .btn-group .btn.active {
+//     box-shadow: 2px 2px 6px rgba(0,0,0,.4);
+//     transform: translateY(-1px);
+//     -webkit-transform: translateY(-1px);
+// }
+
+// .btn-round{
+//     border-width: $border-thin;
+//     border-radius: $btn-round-radius;
+
+//     &.btn-simple{
+//         padding: $padding-btn-vertical - 1  $padding-round-horizontal - 1;
+//     }
+// }
+
+// .no-caret {
+//   &.dropdown-toggle::after {
+//     display: none;
+//   }
+// }
+
+// .btn-secondary:not(:disabled):not(.disabled):active,
+// .btn-secondary:not(:disabled):not(.disabled).active,
+// .show > .btn-secondary.dropdown-toggle {
+//     color: $white;
+// }
+
+// .btn-group label.btn.active {
+//     transform: translateY(0);
+//     -webkit-transform: translateY(0);
+// }
+
+$primary-color: #7971CF;
+$primary-color-lighten: #FFFFFF;
+$primary-color-darken :  #554BC2;
+
+.btn {
+    &:focus {
+      box-shadow: 0 0 0 2px $primary-color-lighten;
+    }
+  }
+  
+  .btn-primary,
+  .btn-primary:visited,
+  .btn-primary i {
+    background-color: $primary-color !important;
+    border-color: $primary-color !important;
+    color: white !important;
+  }
+  
+  .btn-primary:active,
+  .btn-primary:active:focus,
+  .btn-primary:active:hover,
+  .btn-primary:hover,
+  .btn-primary:hover i {
+    background-color: $primary-color-darken !important;
+    border-color: $primary-color-darken !important;
+    color: white !important;
+  }
+  
+  .btn-primary:focus {
+    background-color: $primary-color-darken !important;
+    border-color: $primary-color-darken !important;
+    color: white !important;
+    box-shadow: 0 0 0 2px $primary-color-lighten !important;
+  }
+  
+  .custom-checkbox .custom-control-input:checked ~ .custom-control-label::before{
+    background-color: $primary-color !important;
+    border-color: $primary-color !important;
+    color: white !important;
+  }
+  
+  a {
+    color: $primary-color !important;
+  }
+  
+  .oauth-signin {
+    color: white !important;
+  
+    &:hover * {
+      color: white !important;
+    }
+  }
+  
+  .btn-outline-primary {
+    border-color: $primary-color !important;
+    color: $primary-color !important;
+  
+    &:hover {
+      background: $primary-color !important;
+      color: white !important;
+    }
+  
+    &:focus {
+      box-shadow: 0 0 0 2px $primary-color-lighten !important;
+    }
+  }
+  
+  .header {
+    & .avatar {
+      background-color: $primary-color !important;
+      color: white !important;
+    }
+  
+    & a:hover:not(.btn) {
+      color: $primary-color !important;
+    }
+  
+    & .header-nav {
+      border-color: $primary-color !important;
+    }
+  
+    & .header-nav.active {
+      color: $primary-color !important;
+    }
+  }
+  
+  .dropdown-item {
+    color: #6e7687 !important;
+    &:hover {
+      color: $primary-color !important;
+      background-color: $primary-color-lighten !important;
+      &.sort-disabled {
+        background: #e6e6e6 !important;
+        color: rgb(110, 118, 135) !important;
+        opacity: 0.9;
+      }
+    }
+    &:active, &.active {
+      color: $primary-color !important;
+      background-color: $primary-color-lighten !important;
+    }
+  }
+  
+  input:focus, select:focus {
+    box-shadow: 0 0 5px $primary-color !important;
+    border-color: $primary-color !important;
+  }
+  
+  .list-group-item.active {
+    background-color: $primary-color-lighten !important;
+  
+    &, .list-group-item.active * {
+      color: $primary-color !important;
+    }
+  
+    &.sort-disabled {
+      background: #e6e6e6 !important;
+      color: rgb(110, 118, 135) !important;
+      opacity: 0.9 !important;
+    }
+  }
+  
+  .text-primary {
+    color: $primary-color !important;
+  }
+  
+  .bg-primary {
+    background-color: $primary-color !important;
+    color: white !important;
+  }
+  
+  .btn-danger {
+    color: white !important;
+  }
+  
+  #clear-search {
+    &:hover {
+      color: $primary-color-darken !important;
+    }
+  }
+  
+  .pagination {
+    .page-item {
+      &.active a {
+        color:white !important;
+        background-color: $primary-color !important;
+      }
+  
+      & a {
+        color: $primary-color !important;
+        border-color: $primary-color !important;
+        white-space: nowrap;
+      }
+  
+      & a:hover {
+        background-color: $primary-color-lighten !important;
+      }
+  
+      & a:focus {
+        box-shadow: 0 0 3px $primary-color !important;
+      }
+    }
+  }
+  
+  .primary-regular {
+    background-color: $primary-color !important;
+    border-color: $primary-color !important;
+    color: white !important;
+  }
+  
+  .primary-lighten {
+    background-color: $primary-color-lighten !important;
+    border-color: $primary-color-lighten !important;
+    color: $primary-color !important;
+  }
+  
+  .primary-darken {
+    background-color: $primary-color-darken !important;
+    border-color: $primary-color-darken !important;
+    color: white !important;
+  }
+  
+  .custom-switch-input:checked ~ .custom-switch-indicator {
+    background-color: $primary-color !important;
+    border-color: $primary-color-darken !important;
+  }
+  
+  .custom-switch-input:focus ~ .custom-switch-indicator {
+    box-shadow: 0 0 0 2px $primary-color-lighten;
+    border-color: $primary-color-darken !important;
+  }
+  
+  .custom-control-label::before {
+    border-color: $primary-color-darken !important;
+  }
+  
+  .manage-users-tab {
+    &.selected {
+      @extend .btn-primary;
+    }
+  }
+  
+  .room-block {
+    &.current {
+      box-shadow: 0 0 10px $primary-color-lighten;
+    }
+  }
+  
