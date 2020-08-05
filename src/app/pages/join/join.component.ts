@@ -49,10 +49,10 @@ ngOnInit(){
     let data = {    
       meeting_id:this.id
            }
-//          this.data.getRoom(data).subscribe(
-//      data => {//this.users$ = data;
-//  var result:any=data
-//     this.roomDetails=result.result
+         this.data.getRoom(data).subscribe(
+     data => {//this.users$ = data;
+ var result:any=data
+    this.roomDetails=result.result
    //console.log(this.roomDetails.length)
 
   if(this.roomDetails.length==0)
@@ -82,8 +82,8 @@ alert("No Meeting Found")
 
   }
           
-     }
-  
+     })
+  }
 
 
 async join(f:NgForm){
@@ -97,9 +97,53 @@ var accesscode
     meetingId: this.id,
     accessCode: accesscode
   }
+console.log(accessdata)
+
+ this.data.validateAccessCode(accessdata).subscribe(
+     data => {//this.users$ = data;
+      var result:any=data
+      
+      if(result.result[0].isvalid_accesscode==false)
+      {
+        alert("Invalid Access Code")
+        return
+ 
+      }
+      else
+      {
+        var userId
+        if(localStorage.getItem("userAuthId")==null) { userId="" } else {userId=localStorage.getItem("userAuthId")}
+        let data={
+          meetingId:this.id,
+          userId: userId,
+          userName:f.value.name
+    
+         }
+console.log(data)
 
 
-}} 
+         this.data.getJoinRoomURL(data).subscribe(
+          data => {//this.users$ = data;
+          
+          const aa:any=  data;
+          
+        const url:any =aa.result
+        //console.log (url)
+         window.location.href= url
+          //this.router.navigate(['/home'])
+        });
 
+
+      }
+     // this.roomDetails=result.result
+     
+     });
+
+  
+      return this.roomDetails
+
+    }
+  
+  }
 
 

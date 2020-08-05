@@ -55,8 +55,6 @@ else
     } else if (!f.value.password) {
         return;
     }
-
-
     this.loading = true;
     let data = {
         email: f.value.email,
@@ -64,26 +62,52 @@ else
     }
     
 
+    // this.http.post('http://localhost:3000/api/auth/signin', data).subscribe(result => {
+      
+    //   var response :any
+    //       response = result;
+          
+        
+    //       console.log(response.Status)
+    //       if (response.Status=200) {
+            
+    //               localStorage.setItem("authData", JSON.stringify(response.result))
+                  
+    //                   this.router.navigate(['/home']);
+       
+    //       } else {
+    //           //this.loading = true;
+    //           this.alertMessage="hello"
+    //         //  this.alertMessage = "Invalid User Name Or Password"
+    //           console.log(response)
+    //       }
+    //   });
 
-   
+    this.data.login(data).subscribe(
+      data => {this.users$ = data;
+               
+        console.log("Data--->",this.users$.user.id);
+    
+    console.log("Response -------->",JSON.stringify(data))
+    var userid=JSON.parse(JSON.stringify(data)).user.id
 
-      localStorage.setItem("userAuthData", data.email)
+      localStorage.setItem("userAuthData", JSON.stringify(data))
       localStorage.setItem("userAuthEmail", JSON.stringify(this.users$.user.email))
-      localStorage.setItem("userAuthId", "1")
-      localStorage.setItem("userAuthName", "Kuldeep")
-      localStorage.setItem("userAuthImgUrl", "")
+      localStorage.setItem("userAuthId", JSON.stringify(this.users$.user.id))
+      localStorage.setItem("userAuthName", JSON.stringify(this.users$.user.name))
+      localStorage.setItem("userAuthImgUrl", JSON.stringify(this.users$.user.img_url))
       
      
     
-  
+      //var authData = JSON.parse(localStorage.getItem('userAuthData'))
   
  
-
+console.log("from Local Storage--->",localStorage.getItem('userId'))
       this.router.navigate(['/home'])
     }
 
     
-    
+    )
 
   
 
@@ -114,5 +138,5 @@ else
 
 
 
-  
+  }
   
