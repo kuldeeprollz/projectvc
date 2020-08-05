@@ -28,7 +28,6 @@ import { Injectable } from '@angular/core';
         getRoomList(requsetBody) {
             return this.http.post('http://172.105.33.239:3300/api/rooms/getUserRooms',requsetBody)
 
-            //172.105.33.239
             }
 
 
